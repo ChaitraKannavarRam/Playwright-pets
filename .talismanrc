@@ -1,0 +1,14 @@
+fileignoreconfig:
+- filename: .tailsmanrc
+  checksum: 6540bfa6de99af6caf6a141e13440ce0c534c1503ea4dbc34785badf2b1a2c64
+- filename: allure-results/b35a0126-e965-4fd4-b641-f5c6d8cfa8b3-result.json
+  checksum: 81847055bde6db0b4ba34b5f9999621b5eb7efaa2923e0bcd29f7c1c6698c261
+- filename: package-lock.json
+  checksum: 9561f766ad84d9265cd578089e47eff9d9f6be724b1f115f30bfaa4a2e51b8dc
+- filename: readme
+  checksum: cdb010ae0704508f1dce6dbbc1df8c6676b434f66e7fadcd4f6fc57af223406c
+- filename: tests/pages/loginPage.js
+  checksum: 1b4c7eb89a40d5947d7226352c0d1483c12a22f4120d2a9d54db6bb925472819
+- filename: .tailsmanrc
+  checksum: 4e11cc9cad3c059a8362a2d278282d1a284251dc3e9e5b7a99093c6888c4d543
+version: ""

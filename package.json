@@ -1,0 +1,21 @@
+{
+  "name": "playwright-pets",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "report": "playwright show-report",
+  "test": "npx playwright test",
+  "test:headed": "npx playwright test --headed",
+  "test:debug": "npx playwright test --debug",
+  "test:report": "npx playwright show-report"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@playwright/test": "^1.56.0",
+    "allure-playwright": "^3.4.1",
+    "playwright": "^1.56.0"
+  }
+}

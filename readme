@@ -1,0 +1,12 @@
+npm test tests/ui/adopt-pet.spec.js  
+allure serve allure-results  
+npm install --save-dev allure-playwright
+
+# Run the official image interactively and mount your code
+docker run --rm -it \
+  -v "$(pwd)":/workspace \
+  -w /workspace \
+  --shm-size=1gb \
+  mcr.microsoft.com/playwright:latest \
+  /bin/bash
+
