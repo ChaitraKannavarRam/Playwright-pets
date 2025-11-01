@@ -30,39 +30,30 @@ jobs:
       - name: Install Playwright browsers
         run: npx playwright install --with-deps
 
-      - name: Run Playwright tests (Allure reporter)
+      - name: Run Playwright tests
         run: npx playwright test
 
-      - name: Generate Allure Report
-        run: npx allure generate allure-results --clean -o allure-report
+      - name: Install Allure commandline
+        run: npm install -g allure-commandline --save-dev
 
-      - name: Upload Allure Report as Artifact
+      - name: Generate Allure HTML Report
         if: always()
-        uses: actions/upload-artifact@v4
+        run: allure generate allure-results --clean -o allure-report
+
+      - name: Upload report for deploy
+        if: always()
+        uses: actions/upload-pages-artifact@v3
         with:
-          name: allure-report
           path: allure-report/
 
   deploy:
     if: always()
     needs: test
     runs-on: ubuntu-latest
-
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
     steps:
-      - name: Download Allure Report Artifact
-        uses: actions/download-artifact@v4
-        with:
-          name: allure-report
-          path: ./allure-report
-
-      - name: Setup Pages
-        uses: actions/configure-pages@v5
-
-      - name: Upload to GitHub Pages
-        uses: actions/upload-pages-artifact@v3
-        with:
-          path: ./allure-report
-
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
